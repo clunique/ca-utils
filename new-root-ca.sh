@@ -31,5 +31,5 @@ echo 1001 > db/crlnumber
 
 cd ${OLD_DIR}
 
-cp root-ca/root-ca.conf ${CA_NAME_DIR}/${CA_NAME}.conf
+cp root-ca/root-ca.conf ${CA_NAME_DIR}/root-ca.conf
 cp root-ca/sub-ca/sub-ca.conf ${CA_NAME_DIR}/sub-ca/sub-ca.conf

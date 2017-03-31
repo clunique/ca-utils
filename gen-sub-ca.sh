@@ -20,6 +20,6 @@ openssl req -new -config sub-ca.conf -out sub-ca.csr -keyout private/sub-ca.key 
 
 # Step 2, we get the root CA to issue a certificate
 cd ../
-openssl ca -config ${CA_NAME}.conf -in sub-ca/sub-ca.csr -out sub-ca/sub-ca.crt -extensions sub_ca_ext -batch
+openssl ca -config root-ca.conf -in sub-ca/sub-ca.csr -out sub-ca/sub-ca.crt -extensions sub_ca_ext -batch
 
 cd ${OLD_DIR}

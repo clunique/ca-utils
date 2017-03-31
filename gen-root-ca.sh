@@ -16,9 +16,9 @@ OLD_DIR=`(pwd)`
 cd ${CA_NAME_DIR}
 
 # Step 1, generate the key and the CSR
-openssl req -new -config ${CA_NAME}.conf -out root-ca.csr -keyout private/root-ca.key -nodes
+openssl req -new -config root-ca.conf -out root-ca.csr -keyout private/root-ca.key -nodes
 
 # Step 2, create a self-signed certificate
-openssl ca -selfsign -config ${CA_NAME}.conf -in root-ca.csr -out root-ca.crt -extensions ca_ext -batch
+openssl ca -selfsign -config root-ca.conf -in root-ca.csr -out root-ca.crt -extensions ca_ext -batch
 
 cd ${OLD_DIR}

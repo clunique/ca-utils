@@ -4,13 +4,16 @@
 CN_NAME="$1"
 
 if [[ -n "$1" ]]; then
-    CA_NAME="$1"
+    CN_NAME="$1"
 else
-    echo "Usage: gen-csr.sh <CA-NAME>"
+    echo "Usage: gen-csr.sh <CN-NAME>"
+    echo "For example: gen-csr.sh uc-dev.nscloud.local"
     exit 1
 fi
 
-openssl genrsa -out csr/${CA_NAME}.key 2048
+echo "CN: ${CN_NAME}"
 
-openssl req -new -config csr/${CA_NAME}.conf -key csr/${CA_NAME}.key -out csr/${CA_NAME}.csr
+openssl genrsa -out csr/${CN_NAME}.key 2048
+
+openssl req -new -config csr/${CN_NAME}.conf -key csr/${CN_NAME}.key -out csr/${CN_NAME}.csr
 
